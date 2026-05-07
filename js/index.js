@@ -1,5 +1,5 @@
-import { renderLogin } from '../login.js';
-import { renderProfile } from '../profile.js';
+import { renderLogin } from './login.js';
+import { renderProfile } from './profile.js';
 
 function main() {
     const appContainer = document.getElementById('app');

@@ -1,4 +1,4 @@
-import { createElementWithClass, createInputBox, cleanUp } from './utils/utils.js';
+import { createElementWithClass, createInputBox, cleanUp } from '../utils/utils.js';
 import { renderProfile } from './profile.js';
 
 export function renderLogin(container) {
