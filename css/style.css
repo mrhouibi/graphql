@@ -1,0 +1,250 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+    padding: 20px;
+    color: #fff;
+}
+
+/* ===== LOGIN CONTAINER ===== */
+.login-container,
+.profile-container {
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 35px;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+
+    position: relative;
+}
+
+/* ===== TITLES ===== */
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ===== INPUTS ===== */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 15px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 3px rgba(255, 80, 80, 0.3);
+}
+
+/* ===== BUTTONS ===== */
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.35);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== ERROR ===== */
+#error-message {
+    margin-top: 12px;
+    color: #ff7b7b;
+    font-size: 14px;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: auto;
+    min-width: 100px;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== STATS ===== */
+.stats-container {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+/* ===== STAT BOX ===== */
+.stat-box {
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 180px;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.stat-box h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.stat-box p {
+    font-size: 42px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #ff416c, #ffcc70);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .login-container,
+    .profile-container {
+        padding: 25px;
+    }
+
+    .stat-box {
+        min-height: 150px;
+    }
+
+    .stat-box p {
+        font-size: 34px;
+    }
+}
+
+.errorMsg {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+    min-width: 280px;
+    max-width: 400px;
+
+    padding: 16px 20px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 59, 59, 0.12);
+    border: 1px solid rgba(255, 80, 80, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    animation: slideIn 0.3s ease;
+
+    z-index: 9999;
+}
+
+.errorMsg::before {
+    content: "⚠ ";
+    font-size: 16px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
