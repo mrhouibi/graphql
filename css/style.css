@@ -9,27 +9,28 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;  
 
     background: linear-gradient(135deg, #141e30, #243b55);
-    padding: 20px;
+    padding: 40px;
+
     color: #fff;
 }
 
 /* ===== LOGIN CONTAINER ===== */
-.login-container,
-.profile-container {
+.profile-container,
+.login-container {
     width: 100%;
-    max-width: 650px;
+    max-width: 1100px;
+
+    margin: 0 auto;   /* center بدون squeeze */
 
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
 
-    padding: 35px;
+    padding: 40px;
     border-radius: 24px;
 
     box-shadow:
@@ -37,10 +38,7 @@ body {
         inset 0 1px 1px rgba(255, 255, 255, 0.08);
 
     text-align: center;
-
-    position: relative;
 }
-
 /* ===== TITLES ===== */
 h1, h2, h3 {
     margin-bottom: 15px;
@@ -136,14 +134,20 @@ button:active {
 
 /* ===== STATS ===== */
 .stats-container {
-    margin-top: 35px;
+    margin-top: 40px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding: 10px 5px;
 }
-
+/* keep natural order only (NO ORDER chaos) */
+#xp-box { grid-column: auto; }
+#box4 { grid-column: auto; }
+#box5 { grid-column: auto; }
 /* ===== STAT BOX ===== */
 .stat-box {
     padding: 30px 20px;
@@ -187,18 +191,15 @@ button:active {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
-    .login-container,
-    .profile-container {
-        padding: 25px;
-    }
-
-    .stat-box {
-        min-height: 150px;
-    }
-
-    .stat-box p {
-        font-size: 34px;
+    .stats-container {
+        grid-template-columns: 1fr;
     }
 }
 
