@@ -18,12 +18,41 @@ body {
 }
 
 /* ===== LOGIN CONTAINER ===== */
-.profile-container,
-.login-container {
+.sectionLogin {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* login card */
+.login-container,
+.form-box.login {
+    width: 100%;
+    max-width: 420px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 35px;
+    border-radius: 24px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+
+/* =========================
+   PROFILE LAYOUT (FULL WIDTH DASHBOARD)
+========================= */
+.profile-container {
     width: 100%;
     max-width: 1100px;
 
-    margin: 0 auto;   /* center بدون squeeze */
+    margin: 0 auto;
 
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
@@ -33,9 +62,7 @@ body {
     padding: 40px;
     border-radius: 24px;
 
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.35),
-        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
 
     text-align: center;
 }
