@@ -108,27 +108,23 @@ async function fetchUserData() {
     }
 }
 
-// ─── XP ───────────────────────────────────────────────────────────────────────
+// XP 
 function renderXp(data) {
     let xp = data.data.transaction.reduce((acc, t) => acc + t.amount, 0);
     xp = Math.ceil(xp / 1000);
     document.getElementById('xp-count').textContent = `${xp} KB`;
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// Helpers 
 
-/**
- * Create an SVG element with the given attributes
- */
+
 function svgEl(tag, attrs = {}) {
     const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
     Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
     return el;
 }
 
-/**
- * Build a floating tooltip div and return show/hide helpers
- */
+
 function makeTooltip() {
     const tt = document.createElement('div');
     tt.style.cssText =
@@ -148,7 +144,7 @@ function makeTooltip() {
     return { tt, show, hide };
 }
 
-// ─── Skills Bar Chart (SVG) ───────────────────────────────────────────────────
+// Skills Bar Chart SVG
 function renderSkillsChart(transactions) {
     if (!transactions || !transactions.length) return;
 
@@ -164,7 +160,7 @@ function renderSkillsChart(transactions) {
     const container = document.getElementById('skills-chart');
     container.innerHTML = '';
 
-    // ── Legend ──
+    
     const legend = document.createElement('div');
     legend.style.cssText = 'display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;font-size:12px;';
     labels.forEach((lbl, i) => {
@@ -177,7 +173,7 @@ function renderSkillsChart(transactions) {
     });
     container.appendChild(legend);
 
-    // ── SVG dimensions ──
+    //  SVG dimensions 
     const W = 400, H = 240;
     const marginLeft = 36, marginRight = 10, marginTop = 10, marginBottom = 30;
     const chartW = W - marginLeft - marginRight;
@@ -193,7 +189,7 @@ function renderSkillsChart(transactions) {
 
     const { show, hide } = makeTooltip();
 
-    // ── Y gridlines & labels (0 20 40 60 80 100) ──
+    //  Y gridlines & labels (0 20 40 60 80 100) ──
     for (let v = 0; v <= 100; v += 20) {
         const y = marginTop + chartH - (v / 100) * chartH;
 
@@ -213,7 +209,7 @@ function renderSkillsChart(transactions) {
         svg.appendChild(txt);
     }
 
-    // ── Bars ──
+    //  Bars 
     const barGroupW = chartW / topSkills.length;
     const barW      = barGroupW * 0.55;
 
@@ -263,7 +259,7 @@ function renderSkillsChart(transactions) {
     container.appendChild(svg);
 }
 
-// ─── Audit Doughnut Chart (SVG) ───────────────────────────────────────────────
+// Audit Doughnut Chart svg
 function renderAuditChart(user) {
     const succeeded = user.audits_aggregate.aggregate.count;
     const failed    = user.failed_audits.aggregate.count;
@@ -280,7 +276,7 @@ function renderAuditChart(user) {
     const cx     = SIZE / 2;
     const cy     = SIZE / 2;
     const R      = 80;   // outer radius
-    const r      = 54;   // inner radius (cutout)
+    const r      = 54;   // inner radius 
 
     const svg = svgEl('svg', {
         viewBox: `0 0 ${SIZE} ${SIZE}`,
@@ -292,7 +288,7 @@ function renderAuditChart(user) {
 
     const { show, hide } = makeTooltip();
 
-    // Helper: polar → cartesian
+
     function polar(angle, radius) {
         return {
             x: cx + radius * Math.cos(angle),

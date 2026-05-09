@@ -1,0 +1,17 @@
+Request → Parser → Auth → Resolvers → DB → JSON → Response
+
+Login
+  ↓
+JWT stored
+  ↓
+fetch GraphQL with JWT
+  ↓
+backend verifies token
+  ↓
+GraphQL parses query
+  ↓
+resolvers fetch DB data
+  ↓
+JSON response returned
+  ↓
+JS renders UI + charts
