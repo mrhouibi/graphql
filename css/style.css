@@ -9,15 +9,14 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     min-height: 100vh;
 
-    display: block;  
-
     background: linear-gradient(135deg, #141e30, #243b55);
-    padding: 40px;
 
     color: #fff;
+
+    padding: 40px;
 }
 
-/* ===== LOGIN CONTAINER ===== */
+/* ===== LOGIN ===== */
 .sectionLogin {
     min-height: 100vh;
 
@@ -26,18 +25,19 @@ body {
     align-items: center;
 }
 
-/* login card */
 .login-container,
 .form-box.login {
     width: 100%;
     max-width: 420px;
 
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
 
     padding: 35px;
+
     border-radius: 24px;
 
     box-shadow: 0 10px 40px rgba(0,0,0,0.35);
@@ -45,38 +45,52 @@ body {
     text-align: center;
 }
 
-/* =========================
-   PROFILE LAYOUT (FULL WIDTH DASHBOARD)
-========================= */
+/* ===== PROFILE ===== */
 .profile-container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1250px;
 
     margin: 0 auto;
 
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
 
-    padding: 40px;
-    border-radius: 24px;
+    padding: 45px;
+
+    border-radius: 28px;
 
     box-shadow: 0 10px 40px rgba(0,0,0,0.35);
 
     text-align: center;
 }
+
 /* ===== TITLES ===== */
-h1, h2, h3 {
-    margin-bottom: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+
+    color: rgba(255,255,255,0.8);
 }
 
 /* ===== INPUTS ===== */
 input {
     width: 100%;
+
     padding: 14px 16px;
+
     margin-bottom: 15px;
 
     border: none;
@@ -84,7 +98,8 @@ input {
 
     border-radius: 12px;
 
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255,255,255,0.12);
+
     color: white;
 
     font-size: 15px;
@@ -93,25 +108,29 @@ input {
 }
 
 input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255,255,255,0.6);
 }
 
 input:focus {
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 0 0 3px rgba(255, 80, 80, 0.3);
+    background: rgba(255,255,255,0.18);
+
+    box-shadow: 0 0 0 3px rgba(255,80,80,0.3);
 }
 
 /* ===== BUTTONS ===== */
 button {
     width: 100%;
+
     padding: 14px;
 
     border: none;
+
     border-radius: 12px;
 
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
 
     color: white;
+
     font-size: 15px;
     font-weight: 600;
 
@@ -122,116 +141,153 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.35);
+
+    box-shadow: 0 10px 20px rgba(255,75,43,0.35);
 }
 
 button:active {
     transform: scale(0.98);
 }
 
-/* ===== ERROR ===== */
-#error-message {
-    margin-top: 12px;
-    color: #ff7b7b;
-    font-size: 14px;
-}
-
-/* ===== LOGOUT BUTTON ===== */
+/* ===== LOGOUT ===== */
 .logout-btn {
     position: absolute;
+
     top: 20px;
     right: 20px;
 
     width: auto;
-    min-width: 100px;
+
+    min-width: 110px;
 
     padding: 10px 18px;
 
     border-radius: 999px;
-
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-
-    font-size: 14px;
-    font-weight: 600;
 }
 
-.logout-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* ===== STATS ===== */
+/* ===== STATS GRID ===== */
 .stats-container {
-    margin-top: 40px;
+    margin-top: 45px;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 280px 1fr;
 
-    gap: 25px;
+    gap: 28px;
 
-    padding: 10px 5px;
+    align-items: start;
 }
-/* keep natural order only (NO ORDER chaos) */
-#xp-box { grid-column: auto; }
-#box4 { grid-column: auto; }
-#box5 { grid-column: auto; }
+
+/* XP BOX */
+#xp-box {
+    min-height: 480px;
+    max-height: 1000px;
+
+    justify-content: center;
+}
+
+/* AUDIT */
+#box4 {
+    min-height: 420px;
+}
+
+/* SKILLS FULL WIDTH */
+#box5 {
+    grid-column: 1 / -1;
+
+    min-height: 520px;
+}
+
 /* ===== STAT BOX ===== */
 .stat-box {
-    padding: 30px 20px;
+    padding: 30px 25px;
 
-    border-radius: 20px;
+    border-radius: 24px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.08);
 
     transition: 0.3s ease;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    min-height: 180px;
+    align-items: center;
 }
 
 .stat-box:hover {
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.12);
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255,255,255,0.12);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-.stat-box h2 {
-    font-size: 18px;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.85);
-}
-
+/* ===== NUMBERS ===== */
 .stat-box p {
-    font-size: 42px;
     font-weight: 700;
 
     background: linear-gradient(135deg, #ff416c, #ffcc70);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+#xp-count {
+    font-size: 60px;
 }
 
-@media (max-width: 600px) {
-    .stats-container {
-        grid-template-columns: 1fr;
-    }
+#audit-ratio {
+    font-size: 44px;
+
+    margin-bottom: 20px;
 }
 
+/* ===== CHART CONTAINERS ===== */
+#skills-chart,
+#audit-chart {
+    width: 100%;
+}
+
+/* ===== SVG ===== */
+svg {
+    overflow: visible;
+}
+
+/* SVG TEXT */
+svg text {
+    fill: rgba(255,255,255,0.92);
+
+    font-family: Poppins, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+/* SKILLS SVG */
+#skills-chart svg {
+    width: 100%;
+    height: 440px;
+}
+
+/* AUDIT SVG */
+#audit-chart svg {
+    width: 250px;
+    height: 250px;
+}
+
+/* ===== LEGENDS ===== */
+#skills-chart div,
+#audit-chart div {
+    color: white;
+}
+
+/* ===== ERROR ===== */
 .errorMsg {
     position: fixed;
+
     top: 30px;
     right: 30px;
 
@@ -242,8 +298,9 @@ button:active {
 
     border-radius: 14px;
 
-    background: rgba(255, 59, 59, 0.12);
-    border: 1px solid rgba(255, 80, 80, 0.35);
+    background: rgba(255,59,59,0.12);
+
+    border: 1px solid rgba(255,80,80,0.35);
 
     backdrop-filter: blur(10px);
 
@@ -252,8 +309,7 @@ button:active {
     font-size: 14px;
     font-weight: 500;
 
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 
     animation: slideIn 0.3s ease;
 
@@ -274,5 +330,42 @@ button:active {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    #box5 {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .profile-container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    #xp-count {
+        font-size: 46px;
+    }
+
+    #audit-ratio {
+        font-size: 36px;
+    }
+
+    #skills-chart svg {
+        height: 340px;
     }
 }
